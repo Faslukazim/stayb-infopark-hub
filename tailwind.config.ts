@@ -86,30 +86,40 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" }
         },
-        "fade-in": {
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" }
+        },
+        "fade-up-subtle": {
           from: { opacity: "0", transform: "translateY(12px)" },
           to: { opacity: "1", transform: "translateY(0)" }
         },
-        "fade-in-left": {
-          from: { opacity: "0", transform: "translateX(-12px)" },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" }
+        },
+        "fade-left": {
+          from: { opacity: "0", transform: "translateX(16px)" },
           to: { opacity: "1", transform: "translateX(0)" }
         },
-        "fade-in-right": {
-          from: { opacity: "0", transform: "translateX(12px)" },
+        "fade-right": {
+          from: { opacity: "0", transform: "translateX(-16px)" },
           to: { opacity: "1", transform: "translateX(0)" }
         },
         "scale-in": {
-          from: { opacity: "0", transform: "scale(0.96)" },
+          from: { opacity: "0", transform: "scale(0.97)" },
           to: { opacity: "1", transform: "scale(1)" }
         }
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out forwards",
-        "fade-in-left": "fade-in-left 0.6s ease-out forwards",
-        "fade-in-right": "fade-in-right 0.6s ease-out forwards",
-        "scale-in": "scale-in 0.5s ease-out forwards"
+        "accordion-down": "accordion-down 0.25s ease-out",
+        "accordion-up": "accordion-up 0.25s ease-out",
+        "fade-up": "fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-up-subtle": "fade-up-subtle 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in": "fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-left": "fade-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-right": "fade-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "scale-in": "scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards"
       },
       boxShadow: {
         xs: "var(--shadow-xs)",
@@ -119,7 +129,14 @@ export default {
         xl: "var(--shadow-xl)"
       },
       transitionTimingFunction: {
-        "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)"
+        "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "out-quint": "cubic-bezier(0.22, 1, 0.36, 1)"
+      },
+      transitionDuration: {
+        "400": "400ms",
+        "600": "600ms",
+        "800": "800ms",
+        "1000": "1000ms"
       }
     }
   },
