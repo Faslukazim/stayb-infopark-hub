@@ -6,10 +6,11 @@ import MoveInSection from "@/components/landing/MoveInSection";
 import ParentSection from "@/components/landing/ParentSection";
 import RoutineSection from "@/components/landing/RoutineSection";
 import Footer from "@/components/landing/Footer";
+import MobileCTABar from "@/components/landing/MobileCTABar";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pb-20 md:pb-0">
       <Hero />
       <FriendsSection />
       <DistanceSection />
@@ -18,6 +19,7 @@ const Index = () => {
       <ParentSection />
       <RoutineSection />
       <Footer />
+      <MobileCTABar />
     </main>
   );
 };
