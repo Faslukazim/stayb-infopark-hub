@@ -1,38 +1,51 @@
 import { Button } from "@/components/ui/button";
-import { MapPin } from "lucide-react";
-import distanceAbstract from "@/assets/distance-abstract.png";
+import { ArrowUpRight } from "lucide-react";
+import RevealSection from "./RevealSection";
+import locationMinimal from "@/assets/location-minimal.png";
 
 const DistanceSection = () => {
   const mapsLink = "https://maps.google.com/?q=StayB+Hostel+Infopark+Kochi";
 
   return (
-    <section className="section-tight border-t border-border">
-      <div className="container-editorial">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="mb-4">7 Minutes to Infopark Phase 2.</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-lg">
-              ₹0 commute. Parent-friendly. Predictable mornings.
-            </p>
-            <Button variant="outline" asChild>
-              <a 
-                href={mapsLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <MapPin className="w-4 h-4" />
-                Open in Maps
-              </a>
-            </Button>
+    <section className="section-tight">
+      <div className="container-wide">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Content */}
+          <div className="max-w-md">
+            <RevealSection>
+              <p className="overline mb-4">Location</p>
+            </RevealSection>
+            <RevealSection delay={100}>
+              <h2 className="mb-6 text-foreground">7 Minutes to Infopark Phase 2.</h2>
+            </RevealSection>
+            <RevealSection delay={200}>
+              <p className="text-lg mb-10">
+                ₹0 commute. Parent-friendly address. Predictable mornings.
+              </p>
+            </RevealSection>
+            <RevealSection delay={300}>
+              <Button variant="outline" asChild>
+                <a 
+                  href={mapsLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Open in Maps
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </Button>
+            </RevealSection>
           </div>
-          <div>
+
+          {/* Image */}
+          <RevealSection direction="right" className="flex justify-center lg:justify-end">
             <img 
-              src={distanceAbstract} 
-              alt="Abstract location pin illustration" 
-              className="w-full max-w-[180px] mx-auto rounded-xl"
+              src={locationMinimal} 
+              alt="" 
+              className="w-32 md:w-40 lg:w-48"
+              aria-hidden="true"
             />
-          </div>
+          </RevealSection>
         </div>
       </div>
     </section>

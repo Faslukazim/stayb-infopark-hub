@@ -1,25 +1,41 @@
-import friendsAbstract from "@/assets/friends-abstract.png";
+import RevealSection from "./RevealSection";
+import friendsMinimal from "@/assets/friends-minimal.png";
 
 const FriendsSection = () => {
   return (
-    <section className="section-tight border-t border-border">
-      <div className="container-editorial">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="order-2 md:order-1">
-            <img 
-              src={friendsAbstract} 
-              alt="Abstract friends illustration" 
-              className="w-full max-w-xs mx-auto md:mx-0 rounded-xl"
-            />
-          </div>
-          <div className="order-1 md:order-2">
-            <h2 className="mb-4">Move In Together.</h2>
-            <p className="text-xl text-muted-foreground mb-6 max-w-lg">
-              2–4 friends can hold beds for 24h. No advance.
-            </p>
-            <p className="caption max-w-md">
-              Avoid split decisions and roommate lottery.
-            </p>
+    <section className="section-tight">
+      <div className="container-wide">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Image */}
+          <RevealSection direction="left" className="order-2 lg:order-1">
+            <div className="flex justify-center lg:justify-start">
+              <img 
+                src={friendsMinimal} 
+                alt="" 
+                className="w-full max-w-xs lg:max-w-sm"
+                aria-hidden="true"
+              />
+            </div>
+          </RevealSection>
+
+          {/* Content */}
+          <div className="order-1 lg:order-2 max-w-md">
+            <RevealSection>
+              <p className="overline mb-4">For Groups</p>
+            </RevealSection>
+            <RevealSection delay={100}>
+              <h2 className="mb-6 text-foreground">Move In Together.</h2>
+            </RevealSection>
+            <RevealSection delay={200}>
+              <p className="text-lg mb-8">
+                2–4 friends can hold beds for 24 hours. No advance payment required.
+              </p>
+            </RevealSection>
+            <RevealSection delay={300}>
+              <p className="caption">
+                Avoid split decisions and roommate lottery.
+              </p>
+            </RevealSection>
           </div>
         </div>
       </div>

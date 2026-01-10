@@ -1,36 +1,51 @@
-import { Check } from "lucide-react";
-import parentAbstract from "@/assets/parent-abstract.png";
+import RevealSection from "./RevealSection";
+import shelterMinimal from "@/assets/shelter-minimal.png";
 
 const ParentSection = () => {
   const points = [
-    "Walkable location",
-    "Refundable deposit",
-    "Inclusive food",
-    "Clear rules"
+    { label: "Walkable location", detail: "7 min to Infopark" },
+    { label: "Refundable deposit", detail: "Fully returned on exit" },
+    { label: "Inclusive food", detail: "All meals covered" },
+    { label: "Clear rules", detail: "No surprises" }
   ];
 
   return (
-    <section className="section-tight border-t border-border">
-      <div className="container-editorial">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="order-2 md:order-1">
-            <img 
-              src={parentAbstract} 
-              alt="Abstract shelter illustration" 
-              className="w-full max-w-[200px] mx-auto md:mx-0 rounded-xl"
-            />
-          </div>
-          <div className="order-1 md:order-2">
-            <h2 className="mb-8">Safe and Predictable.</h2>
+    <section className="section-tight">
+      <div className="container-wide">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Image */}
+          <RevealSection direction="left" className="order-2 lg:order-1">
+            <div className="flex justify-center lg:justify-start">
+              <img 
+                src={shelterMinimal} 
+                alt="" 
+                className="w-48 md:w-56 lg:w-64"
+                aria-hidden="true"
+              />
+            </div>
+          </RevealSection>
+
+          {/* Content */}
+          <div className="order-1 lg:order-2 max-w-md">
+            <RevealSection>
+              <p className="overline mb-4">For Parents</p>
+            </RevealSection>
+            <RevealSection delay={100}>
+              <h2 className="mb-10 text-foreground">Safe and Predictable.</h2>
+            </RevealSection>
             
-            <ul className="space-y-4">
-              {points.map((point) => (
-                <li key={point} className="flex items-center gap-3 text-lg">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span>{point}</span>
-                </li>
+            <div className="space-y-6">
+              {points.map((point, index) => (
+                <RevealSection key={point.label} delay={200 + index * 100}>
+                  <div className="group">
+                    <p className="text-lg text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                      {point.label}
+                    </p>
+                    <p className="caption">{point.detail}</p>
+                  </div>
+                </RevealSection>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
