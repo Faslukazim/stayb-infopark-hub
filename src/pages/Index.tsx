@@ -7,6 +7,7 @@ import ParentSection from "@/components/landing/ParentSection";
 import RoutineSection from "@/components/landing/RoutineSection";
 import Footer from "@/components/landing/Footer";
 import MobileCTABar from "@/components/landing/MobileCTABar";
+import FloatingWhatsApp from "@/components/landing/FloatingWhatsApp";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <RoutineSection />
       <Footer />
       <MobileCTABar />
+      <FloatingWhatsApp />
     </main>
   );
 };
