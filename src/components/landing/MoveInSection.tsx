@@ -1,29 +1,37 @@
+import { useState } from "react";
+import RevealSection from "./RevealSection";
+
 const MoveInSection = () => {
-  const options = [
-    { label: "Today", active: true },
-    { label: "1–7 Days", active: false },
-    { label: "Next Month", active: false },
-  ];
+  const [selected, setSelected] = useState("Today");
+  const options = ["Today", "1–7 Days", "Next Month"];
 
   return (
-    <section className="section-tight border-t border-border">
+    <section className="section-tight">
       <div className="container-editorial">
-        <h2 className="mb-8">Move-In This Week.</h2>
+        <RevealSection>
+          <p className="overline mb-4">Move-In Window</p>
+        </RevealSection>
+        <RevealSection delay={100}>
+          <h2 className="mb-10 text-foreground">When are you moving?</h2>
+        </RevealSection>
         
-        <div className="flex flex-wrap gap-3">
-          {options.map((option) => (
-            <button
-              key={option.label}
-              className={`px-5 py-3 rounded-lg border transition-all duration-200 text-base ${
-                option.active 
-                  ? "bg-primary text-primary-foreground border-primary" 
-                  : "bg-transparent border-border hover:border-foreground/30 hover:bg-muted/50"
-              }`}
-            >
-              {option.label}
-            </button>
-          ))}
-        </div>
+        <RevealSection delay={200}>
+          <div className="flex flex-wrap gap-3">
+            {options.map((option) => (
+              <button
+                key={option}
+                onClick={() => setSelected(option)}
+                className={`px-6 py-3.5 rounded-2xl text-base font-medium transition-all duration-300 ease-out-expo ${
+                  selected === option 
+                    ? "bg-foreground text-background shadow-md" 
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                }`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </RevealSection>
       </div>
     </section>
   );

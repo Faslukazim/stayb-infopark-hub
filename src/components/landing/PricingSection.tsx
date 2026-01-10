@@ -1,40 +1,47 @@
+import RevealSection from "./RevealSection";
+
 const PricingSection = () => {
-  const inclusions = [
-    "Food",
-    "WiFi",
-    "Laundry",
-    "Ironing",
-    "₹0 commute"
-  ];
+  const inclusions = ["Food", "WiFi", "Laundry", "Ironing", "₹0 commute"];
 
   return (
-    <section className="section border-t border-border">
-      <div className="container-editorial">
-        <h2 className="mb-4">₹7000/month. All-In.</h2>
+    <section className="section">
+      <div className="container-editorial text-center">
+        <RevealSection>
+          <p className="overline mb-4">Transparent Pricing</p>
+        </RevealSection>
         
-        {/* Inclusion list */}
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
-          {inclusions.map((item, index) => (
-            <li 
-              key={item} 
-              className="text-lg text-muted-foreground"
-            >
-              {item}
-              {index < inclusions.length - 1 && <span className="ml-6 text-border hidden sm:inline">·</span>}
-            </li>
-          ))}
-        </ul>
+        <RevealSection delay={100}>
+          <h2 className="mb-4 text-foreground">₹7,000/month.</h2>
+        </RevealSection>
+        
+        <RevealSection delay={150}>
+          <p className="text-2xl md:text-3xl text-muted-foreground mb-12">All-in.</p>
+        </RevealSection>
 
-        {/* Month 1 note */}
-        <div className="bg-card border border-border rounded-lg p-6 mb-6 max-w-md">
-          <p className="text-lg font-medium mb-1">Month 1: ₹8000</p>
-          <p className="caption">Deposit + Admission Included</p>
-        </div>
+        {/* Inclusion list */}
+        <RevealSection delay={200}>
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
+            {inclusions.map((item) => (
+              <span key={item} className="chip">{item}</span>
+            ))}
+          </div>
+        </RevealSection>
+
+        {/* Month 1 card */}
+        <RevealSection delay={300}>
+          <div className="card-elevated inline-block text-left max-w-sm mx-auto mb-10">
+            <p className="overline mb-3">First Month</p>
+            <p className="text-2xl font-light text-foreground mb-2">₹8,000</p>
+            <p className="caption">Includes deposit + admission</p>
+          </div>
+        </RevealSection>
 
         {/* Microcopy */}
-        <p className="caption max-w-md">
-          No hidden mess bills. No WiFi add-ons. No commute surprises.
-        </p>
+        <RevealSection delay={400}>
+          <p className="caption max-w-md mx-auto">
+            No hidden mess bills. No WiFi add-ons. No commute surprises.
+          </p>
+        </RevealSection>
       </div>
     </section>
   );

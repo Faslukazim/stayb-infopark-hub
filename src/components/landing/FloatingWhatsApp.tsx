@@ -9,7 +9,7 @@ const FloatingWhatsApp = () => {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-24 md:bottom-6 right-4 md:right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
+      className="fixed bottom-24 md:bottom-8 right-4 md:right-8 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] text-white rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-out-expo hover:scale-105 active:scale-95"
       aria-label="Chat on WhatsApp"
     >
       <MessageCircle className="w-6 h-6" />
