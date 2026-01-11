@@ -1,29 +1,42 @@
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, Settings, X, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import RevealSection from "@/components/landing/RevealSection";
-
-// Placeholder images - replace with actual hostel photos
-const photos = [
-  { id: 1, src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80", alt: "Room interior" },
-  { id: 2, src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80", alt: "Common area" },
-  { id: 3, src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80", alt: "Bedroom" },
-  { id: 4, src: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80", alt: "Workspace" },
-  { id: 5, src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80", alt: "Kitchen" },
-  { id: 6, src: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80", alt: "Living space" },
-  { id: 7, src: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&q=80", alt: "Bathroom" },
-  { id: 8, src: "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=800&q=80", alt: "Exterior" },
-];
+import PhotoGrid from "@/components/photos/PhotoGrid";
+import PhotoUploader from "@/components/photos/PhotoUploader";
+import { usePhotos } from "@/hooks/usePhotos";
 
 const Photos = () => {
   const phoneNumber = "9633310117";
   const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm interested in StayB hostel near Infopark.`;
+  const [isEditing, setIsEditing] = useState(false);
+  
+  const { 
+    photos, 
+    loading, 
+    uploading, 
+    uploadPhoto, 
+    deletePhoto, 
+    reorderPhotos, 
+    replacePhoto,
+    maxPhotos,
+    canUpload 
+  } = usePhotos();
+
+  const handleUpload = async (file: File, aspectRatio: '1:1' | '4:5') => {
+    await uploadPhoto(file, aspectRatio);
+  };
+
+  const handleReplace = async (id: string, file: File, aspectRatio: '1:1' | '4:5') => {
+    await replacePhoto(id, file, aspectRatio);
+  };
 
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
       <header className="px-6 md:px-12 lg:px-20 py-8 md:py-12">
-        <div className="container-wide">
+        <div className="container-wide flex items-center justify-between">
           <RevealSection delay={0} duration={800}>
             <Link 
               to="/" 
@@ -32,6 +45,25 @@ const Photos = () => {
               <ArrowLeft className="w-4 h-4" />
               Back
             </Link>
+          </RevealSection>
+
+          <RevealSection delay={100} duration={800}>
+            <button
+              onClick={() => setIsEditing(!isEditing)}
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-500"
+            >
+              {isEditing ? (
+                <>
+                  <X className="w-4 h-4" />
+                  Done
+                </>
+              ) : (
+                <>
+                  <Settings className="w-4 h-4" />
+                  Manage
+                </>
+              )}
+            </button>
           </RevealSection>
         </div>
       </header>
@@ -45,31 +77,53 @@ const Photos = () => {
           <RevealSection delay={200} duration={1000}>
             <h1 className="max-w-2xl">Photos</h1>
           </RevealSection>
+          {isEditing && (
+            <RevealSection delay={300} duration={800}>
+              <p className="text-muted-foreground mt-4">
+                {photos.length} of {maxPhotos} photos • Drag to reorder
+              </p>
+            </RevealSection>
+          )}
         </div>
       </section>
 
       {/* Photo Grid */}
       <section className="px-6 md:px-12 lg:px-20 pb-32 md:pb-40">
         <div className="container-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
-            {photos.map((photo, index) => (
-              <RevealSection 
-                key={photo.id} 
-                delay={300 + index * 80} 
-                duration={900}
-                direction="fade"
-              >
-                <div className="aspect-[4/3] overflow-hidden rounded-xl bg-secondary">
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </RevealSection>
-            ))}
-          </div>
+          {loading ? (
+            <div className="py-20 flex justify-center">
+              <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" />
+            </div>
+          ) : (
+            <div className="space-y-8">
+              <PhotoGrid
+                photos={photos}
+                onDelete={deletePhoto}
+                onReorder={reorderPhotos}
+                onReplace={handleReplace}
+                isEditing={isEditing}
+              />
+
+              {/* Upload Section (only in edit mode) */}
+              {isEditing && canUpload && (
+                <RevealSection delay={0} duration={600}>
+                  <div className="max-w-sm">
+                    {uploading && (
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Uploading...
+                      </div>
+                    )}
+                    <PhotoUploader
+                      onUpload={handleUpload}
+                      disabled={uploading}
+                      remainingSlots={maxPhotos - photos.length}
+                    />
+                  </div>
+                </RevealSection>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
