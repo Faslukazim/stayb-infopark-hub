@@ -9,23 +9,24 @@ const MoveInSection = () => {
     <section className="section-tight">
       <div className="container-editorial">
         <RevealSection>
-          <p className="overline mb-4">Move-In Window</p>
+          <p className="overline mb-6">Move-In Window</p>
         </RevealSection>
-        <RevealSection delay={100}>
-          <h2 className="mb-10 text-foreground">When are you moving?</h2>
+        <RevealSection delay={80}>
+          <h2 className="mb-12 text-foreground">When are you moving?</h2>
         </RevealSection>
         
-        <RevealSection delay={200}>
-          <div className="flex flex-wrap gap-3">
-            {options.map((option) => (
+        <RevealSection delay={160}>
+          <div className="flex flex-wrap gap-4">
+            {options.map((option, i) => (
               <button
                 key={option}
                 onClick={() => setSelected(option)}
-                className={`px-6 py-3.5 rounded-2xl text-base font-medium transition-all duration-300 ease-out-expo ${
+                className={`px-7 py-4 rounded-2xl text-[0.9375rem] font-medium transition-all duration-500 ease-out-expo ${
                   selected === option 
                     ? "bg-foreground text-background shadow-md" 
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/70"
                 }`}
+                style={{ transitionDelay: `${i * 30}ms` }}
               >
                 {option}
               </button>

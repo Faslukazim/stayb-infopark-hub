@@ -1,50 +1,42 @@
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
 import RevealSection from "./RevealSection";
-import locationMinimal from "@/assets/location-minimal.png";
+import geoLocation from "@/assets/geo-location.png";
 
 const DistanceSection = () => {
-  const mapsLink = "https://maps.google.com/?q=StayB+Hostel+Infopark+Kochi";
-
   return (
     <section className="section-tight">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 lg:gap-28 items-center">
           {/* Content */}
           <div className="max-w-md">
             <RevealSection>
-              <p className="overline mb-4">Location</p>
+              <p className="overline mb-6">Location</p>
             </RevealSection>
-            <RevealSection delay={100}>
-              <h2 className="mb-6 text-foreground">7 Minutes to Infopark Phase 2.</h2>
+            <RevealSection delay={80}>
+              <h2 className="mb-8 text-foreground">7-Minute Walk.</h2>
             </RevealSection>
-            <RevealSection delay={200}>
-              <p className="text-lg mb-10">
-                ₹0 commute. Parent-friendly address. Predictable mornings.
+            <RevealSection delay={160}>
+              <p className="body-large mb-10">
+                No autos. No buses. No Ola surge.<br />
+                Walk to Infopark Phase 2 in under 10 minutes.
               </p>
             </RevealSection>
-            <RevealSection delay={300}>
-              <Button variant="outline" asChild>
-                <a 
-                  href={mapsLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  Open in Maps
-                  <ArrowUpRight className="w-4 h-4" />
-                </a>
-              </Button>
+            <RevealSection delay={240}>
+              <p className="caption">
+                Save ₹2,000–3,000/month on commute costs alone.
+              </p>
             </RevealSection>
           </div>
 
           {/* Image */}
-          <RevealSection direction="right" className="flex justify-center lg:justify-end">
-            <img 
-              src={locationMinimal} 
-              alt="" 
-              className="w-32 md:w-40 lg:w-48"
-              aria-hidden="true"
-            />
+          <RevealSection direction="left" delay={120}>
+            <div className="flex justify-center lg:justify-end">
+              <img 
+                src={geoLocation} 
+                alt="" 
+                className="w-full max-w-xs lg:max-w-sm"
+                aria-hidden="true"
+              />
+            </div>
           </RevealSection>
         </div>
       </div>
