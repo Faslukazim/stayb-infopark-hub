@@ -6,39 +6,34 @@ interface RevealSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  direction?: "up" | "left" | "right" | "fade";
-  stagger?: number;
+  direction?: "up" | "left" | "right";
 }
 
 const RevealSection = ({ 
   children, 
   className, 
   delay = 0,
-  direction = "up",
-  stagger = 0
+  direction = "up" 
 }: RevealSectionProps) => {
   const { ref, isVisible } = useScrollReveal();
 
   const directionStyles = {
-    up: "translate-y-5",
-    left: "translate-x-5",
-    right: "-translate-x-5",
-    fade: ""
+    up: "translate-y-8",
+    left: "translate-x-8",
+    right: "-translate-x-8"
   };
-
-  const totalDelay = delay + stagger;
 
   return (
     <div
       ref={ref}
       className={cn(
-        "transition-all duration-800 ease-out-expo",
+        "transition-all duration-700 ease-out",
         isVisible 
           ? "opacity-100 translate-x-0 translate-y-0" 
           : `opacity-0 ${directionStyles[direction]}`,
         className
       )}
-      style={{ transitionDelay: `${totalDelay}ms` }}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>
