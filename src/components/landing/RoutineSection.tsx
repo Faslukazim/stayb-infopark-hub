@@ -19,7 +19,7 @@ const RoutineSection = () => {
         </RevealSection>
         <RevealSection delay={200}>
           <p className="text-lg mb-10 max-w-md">
-            Everything you need is handled. Focus on work, not logistics.
+            At StayB, everything you need is handled. Focus on work, not logistics.
           </p>
         </RevealSection>
         

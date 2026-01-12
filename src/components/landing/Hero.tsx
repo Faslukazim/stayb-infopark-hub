@@ -14,7 +14,7 @@ const Hero = () => {
           <div className="max-w-xl">
             {/* Overline */}
             <p className="overline mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0ms" }}>
-              Men's Hostel · Kochi
+              Operated by StayB Hostel
             </p>
 
             {/* Main headline */}

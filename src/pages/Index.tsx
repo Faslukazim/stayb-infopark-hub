@@ -1,3 +1,4 @@
+import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import FriendsSection from "@/components/landing/FriendsSection";
 import DistanceSection from "@/components/landing/DistanceSection";
@@ -12,6 +13,7 @@ import FloatingWhatsApp from "@/components/landing/FloatingWhatsApp";
 const Index = () => {
   return (
     <main className="min-h-screen pb-20 md:pb-0">
+      <Navbar />
       <Hero />
       <FriendsSection />
       <DistanceSection />

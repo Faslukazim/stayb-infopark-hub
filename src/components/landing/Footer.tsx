@@ -54,15 +54,16 @@ const Footer = () => {
         </RevealSection>
 
         <RevealSection delay={600} duration={1000}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+          <div className="flex flex-col items-center gap-6">
             <Link 
               to="/photos" 
               className="text-sm text-background/50 hover:text-background/80 transition-colors duration-500"
             >
               Photos →
             </Link>
+            <div className="divider mx-auto bg-background/15" />
             <p className="caption text-background/40">
-              stayb.in
+              StayB Men's Hostel · Kochi — Near Infopark Phase 2
             </p>
           </div>
         </RevealSection>
