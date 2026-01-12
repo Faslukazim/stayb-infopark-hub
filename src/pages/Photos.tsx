@@ -125,22 +125,36 @@ const Photos = () => {
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-500"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back
+              <span className="font-medium text-foreground">StayB</span>
             </Link>
           </RevealSection>
 
-          {/* Only show Done button when in authenticated edit mode */}
-          {isAuthenticated && isEditing && (
-            <RevealSection delay={100} duration={800}>
-              <button
-                onClick={handleExitManage}
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-500"
-              >
-                <X className="w-4 h-4" />
-                Done
-              </button>
-            </RevealSection>
-          )}
+          <div className="flex items-center gap-4">
+            {/* Manage Photos button - visible on /photos page */}
+            {!isEditing && !isMobile && (
+              <RevealSection delay={100} duration={800}>
+                <button
+                  onClick={() => setShowPinDialog(true)}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-500"
+                >
+                  Manage Photos
+                </button>
+              </RevealSection>
+            )}
+
+            {/* Done button when in authenticated edit mode */}
+            {isAuthenticated && isEditing && (
+              <RevealSection delay={100} duration={800}>
+                <button
+                  onClick={handleExitManage}
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-500"
+                >
+                  <X className="w-4 h-4" />
+                  Done
+                </button>
+              </RevealSection>
+            )}
+          </div>
         </div>
       </header>
 

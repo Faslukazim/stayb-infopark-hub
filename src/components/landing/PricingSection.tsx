@@ -39,7 +39,7 @@ const PricingSection = () => {
         {/* Microcopy */}
         <RevealSection delay={400}>
           <p className="caption max-w-md mx-auto">
-            No hidden mess bills. No WiFi add-ons. No commute surprises.
+            At StayB, no hidden mess bills. No WiFi add-ons. No commute surprises.
           </p>
         </RevealSection>
       </div>
