@@ -8,7 +8,7 @@ const Navbar = () => {
           to="/" 
           className="inline-flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors duration-500"
         >
-          <span className="text-lg md:text-xl font-medium tracking-tight">StayB</span>
+          <span className="text-lg md:text-xl font-medium tracking-tight">StayB.</span>
         </Link>
       </div>
     </nav>
