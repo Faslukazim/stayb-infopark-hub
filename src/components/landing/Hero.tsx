@@ -41,17 +41,12 @@ const Hero = () => {
               <span className="chip-accent">₹7000/mo</span>
             </div>
 
-            {/* Primary CTAs */}
+            {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10 opacity-0 animate-fade-in" style={{ animationDelay: "480ms" }}>
               <Button variant="hero" asChild>
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   Check Availability
                   <ArrowRight className="w-4 h-4" />
-                </a>
-              </Button>
-              <Button variant="hero-outline" asChild>
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  Hold Beds 24h
                 </a>
               </Button>
             </div>
