@@ -1,8 +1,12 @@
 import { MessageCircle } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const FloatingWhatsApp = () => {
   const phoneNumber = "9633310117";
   const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm interested in StayB hostel near Infopark.`;
+  const isMobile = useIsMobile();
+
+  if (isMobile) return null;
 
   return (
     <a
