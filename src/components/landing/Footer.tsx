@@ -17,13 +17,8 @@ const Footer = () => {
           <h2 className="mb-8 text-background">Check Availability</h2>
         </RevealSection>
         <RevealSection delay={240} duration={1000}>
-          <p className="body-lg text-background/60 mb-10 max-w-md mx-auto">
-            Most residents find us through word of mouth. Come see why.
-          </p>
-        </RevealSection>
-        <RevealSection delay={300} duration={1000}>
-          <p className="overline text-background/50 mb-10">
-            Beds Available · Kakkanad, Kochi
+          <p className="body-lg text-background/60 mb-16 max-w-md mx-auto">
+            Beds fill fast during joining season. Reach out now to secure your spot.
           </p>
         </RevealSection>
         

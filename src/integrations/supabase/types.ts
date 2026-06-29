@@ -20,7 +20,6 @@ export type Database = {
           created_at: string
           display_order: number
           id: string
-          is_hero: boolean
           storage_path: string
         }
         Insert: {
@@ -28,7 +27,6 @@ export type Database = {
           created_at?: string
           display_order?: number
           id?: string
-          is_hero?: boolean
           storage_path: string
         }
         Update: {
@@ -36,7 +34,6 @@ export type Database = {
           created_at?: string
           display_order?: number
           id?: string
-          is_hero?: boolean
           storage_path?: string
         }
         Relationships: []
