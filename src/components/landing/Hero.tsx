@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { usePhotos } from "@/hooks/usePhotos";
 
 const Hero = () => {
+  const { photos } = usePhotos();
+  const heroPhoto = photos.find((p) => p.is_hero);
   const phoneNumber = "9633310117";
   const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm interested in StayB hostel near Infopark.`;
 
