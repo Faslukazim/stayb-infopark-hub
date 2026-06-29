@@ -8,6 +8,7 @@ export interface Photo {
   storage_path: string;
   aspect_ratio: '1:1' | '4:5';
   display_order: number;
+  is_hero: boolean;
   url: string;
 }
 
