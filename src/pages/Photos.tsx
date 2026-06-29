@@ -161,9 +161,6 @@ const Photos = () => {
       {/* Title */}
       <section className="px-6 md:px-12 lg:px-20 pb-16 md:pb-24">
         <div className="container-wide">
-          <RevealSection delay={100} duration={1000}>
-            <p className="overline mb-5">Verification</p>
-          </RevealSection>
           <RevealSection delay={200} duration={1000}>
             <h1 className="max-w-2xl">Photos</h1>
           </RevealSection>
