@@ -59,15 +59,25 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Image placeholder */}
+          {/* Hero image */}
           <div className="opacity-0 animate-fade-in-slow" style={{ animationDelay: "300ms" }}>
-            <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-3xl bg-secondary border border-dashed border-border flex items-center justify-center p-8">
-              <p className="caption text-center text-muted-foreground leading-relaxed">
-                REPLACE WITH:<br />
-                real bedroom photo,<br />
-                daytime, well-lit
-              </p>
-            </div>
+            {heroPhoto ? (
+              <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-3xl overflow-hidden bg-secondary">
+                <img
+                  src={heroPhoto.url}
+                  alt="StayB hostel bedroom"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-3xl bg-secondary border border-dashed border-border flex items-center justify-center p-8">
+                <p className="caption text-center text-muted-foreground leading-relaxed">
+                  Set a hero photo in<br />
+                  /photos → Manage Photos<br />
+                  (tap the star icon)
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
