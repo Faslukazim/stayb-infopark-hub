@@ -38,6 +38,7 @@ const Photos = () => {
     deletePhoto, 
     reorderPhotos, 
     replacePhoto,
+    setHeroPhoto,
     maxPhotos,
     canUpload 
   } = usePhotos();
@@ -188,6 +189,7 @@ const Photos = () => {
                 onDelete={deletePhoto}
                 onReorder={reorderPhotos}
                 onReplace={handleReplace}
+                onSetHero={setHeroPhoto}
                 isEditing={isEditing && isAuthenticated}
               />
 
