@@ -38,6 +38,7 @@ export const usePhotos = () => {
           return {
             ...photo,
             aspect_ratio: photo.aspect_ratio as '1:1' | '4:5',
+            is_hero: (photo as { is_hero?: boolean }).is_hero ?? false,
             url: urlData.publicUrl,
           };
         })
