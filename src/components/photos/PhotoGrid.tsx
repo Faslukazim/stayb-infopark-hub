@@ -102,9 +102,32 @@ const PhotoGrid = ({ photos, onDelete, onReorder, onReplace, onSetHero, isEditin
                 loading="lazy"
               />
 
+              {/* Hero badge (always visible when set) */}
+              {photo.is_hero && (
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-foreground text-background text-[10px] font-medium tracking-wide uppercase flex items-center gap-1 shadow">
+                  <Star className="w-3 h-3 fill-current" />
+                  Hero
+                </div>
+              )}
+
               {/* Edit Overlay */}
               {isEditing && (
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                  {onSetHero && (
+                    <button
+                      onClick={() => onSetHero(photo.id)}
+                      disabled={photo.is_hero}
+                      className={cn(
+                        "w-10 h-10 rounded-full flex items-center justify-center transition-colors",
+                        photo.is_hero
+                          ? "bg-foreground text-background cursor-default"
+                          : "bg-white/90 hover:bg-white text-foreground"
+                      )}
+                      title={photo.is_hero ? "Current hero photo" : "Set as hero photo"}
+                    >
+                      <Star className={cn("w-4 h-4", photo.is_hero && "fill-current")} />
+                    </button>
+                  )}
                   <button
                     onClick={() => handleReplaceClick(photo.id)}
                     className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors"
