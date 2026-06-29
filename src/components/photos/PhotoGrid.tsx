@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Trash2, GripVertical, RefreshCw } from 'lucide-react';
+import { Trash2, GripVertical, RefreshCw, Star } from 'lucide-react';
 import { Photo } from '@/hooks/usePhotos';
 import { cn } from '@/lib/utils';
 import RevealSection from '@/components/landing/RevealSection';
@@ -9,10 +9,11 @@ interface PhotoGridProps {
   onDelete: (id: string) => void;
   onReorder: (fromIndex: number, toIndex: number) => void;
   onReplace: (id: string, file: File, aspectRatio: '1:1' | '4:5') => Promise<void>;
+  onSetHero?: (id: string) => void;
   isEditing: boolean;
 }
 
-const PhotoGrid = ({ photos, onDelete, onReorder, onReplace, isEditing }: PhotoGridProps) => {
+const PhotoGrid = ({ photos, onDelete, onReorder, onReplace, onSetHero, isEditing }: PhotoGridProps) => {
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
   const replaceInputRef = useRef<HTMLInputElement>(null);
