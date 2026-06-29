@@ -38,6 +38,7 @@ const Photos = () => {
     deletePhoto, 
     reorderPhotos, 
     replacePhoto,
+    setHeroPhoto,
     maxPhotos,
     canUpload 
   } = usePhotos();
