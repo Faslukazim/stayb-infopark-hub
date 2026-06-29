@@ -1,15 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import RevealSection from "./RevealSection";
-import locationMinimal from "@/assets/location-minimal.png";
 
 const DistanceSection = () => {
   const mapsLink = "https://maps.google.com/?q=StayB+Hostel+Infopark+Kochi";
+  const embedSrc =
+    "https://www.google.com/maps?q=StayB+Hostel+Infopark+Kochi&output=embed";
 
   return (
     <section className="section-tight">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Content */}
           <div className="max-w-md">
             <RevealSection>
@@ -25,11 +26,7 @@ const DistanceSection = () => {
             </RevealSection>
             <RevealSection delay={300}>
               <Button variant="outline" asChild>
-                <a 
-                  href={mapsLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
+                <a href={mapsLink} target="_blank" rel="noopener noreferrer">
                   Open in Maps
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
@@ -37,14 +34,18 @@ const DistanceSection = () => {
             </RevealSection>
           </div>
 
-          {/* Image */}
-          <RevealSection direction="right" className="flex justify-center lg:justify-end">
-            <img 
-              src={locationMinimal} 
-              alt="" 
-              className="w-32 md:w-40 lg:w-48"
-              aria-hidden="true"
-            />
+          {/* Map embed */}
+          <RevealSection direction="right">
+            <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden border border-border bg-secondary">
+              <iframe
+                src={embedSrc}
+                title="StayB Hostel location near Infopark, Kochi"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full border-0"
+                allowFullScreen
+              />
+            </div>
           </RevealSection>
         </div>
       </div>
