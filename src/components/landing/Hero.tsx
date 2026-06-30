@@ -1,47 +1,38 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroMinimal from "@/assets/hero-minimal.png";
+import { usePhotos } from "@/hooks/usePhotos";
 
 const Hero = () => {
+  const { photos } = usePhotos();
+  const heroPhoto = photos.find((p) => p.is_hero);
   const phoneNumber = "9633310117";
   const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm interested in StayB hostel near Infopark.`;
 
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 py-24 md:py-32">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-32 items-center">
           <div className="max-w-xl">
-            {/* Overline */}
             <p className="overline mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0ms" }}>
               Operated by StayB Hostel
             </p>
 
-            {/* Main headline */}
             <h1 className="mb-10 text-foreground opacity-0 animate-fade-in" style={{ animationDelay: "120ms" }}>
               Walk to<br />Infopark.
             </h1>
-            
-            {/* Subheadline */}
+
             <p className="body-lg mb-14 opacity-0 animate-fade-in" style={{ animationDelay: "240ms" }}>
               7 minutes to your desk.<br className="hidden sm:block" /> Zero commute, zero headache.
             </p>
 
-            {/* Feature list - refined */}
             <div className="flex flex-wrap gap-3 mb-14 opacity-0 animate-fade-in" style={{ animationDelay: "360ms" }}>
-              {["Food included", "WiFi", "Laundry", "Ironing"].map((item, i) => (
-                <span 
-                  key={item} 
-                  className="chip"
-                  style={{ animationDelay: `${360 + i * 60}ms` }}
-                >
-                  {item}
-                </span>
+              {["Food included", "WiFi", "Laundry", "Ironing"].map((item) => (
+                <span key={item} className="chip">{item}</span>
               ))}
               <span className="chip-accent">₹7000/mo</span>
             </div>
 
-            {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10 opacity-0 animate-fade-in" style={{ animationDelay: "480ms" }}>
               <Button variant="hero" asChild>
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
@@ -51,11 +42,10 @@ const Hero = () => {
               </Button>
             </div>
 
-            {/* Secondary links */}
             <div className="flex items-center gap-6 opacity-0 animate-fade-in" style={{ animationDelay: "600ms" }}>
               <p className="caption">
                 Or call{" "}
-                <a 
+                <a
                   href={`tel:+91${phoneNumber}`}
                   className="text-foreground hover:text-primary transition-colors duration-500 underline underline-offset-4"
                 >
@@ -69,14 +59,25 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Abstract illustration */}
-          <div className="hidden lg:flex items-center justify-center opacity-0 animate-fade-in-slow" style={{ animationDelay: "300ms" }}>
-            <img 
-              src={heroMinimal} 
-              alt="" 
-              className="w-full max-w-md rounded-3xl"
-              aria-hidden="true"
-            />
+          {/* Hero image */}
+          <div className="opacity-0 animate-fade-in-slow" style={{ animationDelay: "300ms" }}>
+            {heroPhoto ? (
+              <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-3xl overflow-hidden bg-secondary">
+                <img
+                  src={heroPhoto.url}
+                  alt="StayB hostel bedroom"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-3xl bg-secondary border border-dashed border-border flex items-center justify-center p-8">
+                <p className="caption text-center text-muted-foreground leading-relaxed">
+                  Set a hero photo in<br />
+                  /photos → Manage Photos<br />
+                  (tap the star icon)
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

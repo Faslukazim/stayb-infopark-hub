@@ -8,6 +8,7 @@ export interface Photo {
   storage_path: string;
   aspect_ratio: '1:1' | '4:5';
   display_order: number;
+  is_hero: boolean;
   url: string;
 }
 
@@ -37,6 +38,7 @@ export const usePhotos = () => {
           return {
             ...photo,
             aspect_ratio: photo.aspect_ratio as '1:1' | '4:5',
+            is_hero: (photo as { is_hero?: boolean }).is_hero ?? false,
             url: urlData.publicUrl,
           };
         })
@@ -283,6 +285,38 @@ export const usePhotos = () => {
     }
   };
 
+  const setHeroPhoto = async (id: string) => {
+    const target = photos.find(p => p.id === id);
+    if (!target) return;
+    const previous = photos;
+    setPhotos(prev => prev.map(p => ({ ...p, is_hero: p.id === id })));
+
+    try {
+      // Clear any existing hero, then set the new one (unique index allows only one true).
+      const { error: clearError } = await supabase
+        .from('photos')
+        .update({ is_hero: false } as never)
+        .eq('is_hero', true);
+      if (clearError) throw clearError;
+
+      const { error: setError } = await supabase
+        .from('photos')
+        .update({ is_hero: true } as never)
+        .eq('id', id);
+      if (setError) throw setError;
+
+      toast({ title: 'Hero photo updated' });
+    } catch (error) {
+      console.error('Error setting hero photo:', error);
+      setPhotos(previous);
+      toast({
+        title: 'Error',
+        description: 'Could not set hero photo',
+        variant: 'destructive',
+      });
+    }
+  };
+
   return {
     photos,
     loading,
@@ -291,6 +325,7 @@ export const usePhotos = () => {
     deletePhoto,
     reorderPhotos,
     replacePhoto,
+    setHeroPhoto,
     maxPhotos: MAX_PHOTOS,
     canUpload: photos.length < MAX_PHOTOS,
   };
