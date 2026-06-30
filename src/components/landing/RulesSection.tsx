@@ -8,7 +8,7 @@ const RulesSection = () => {
     { label: "Cleanliness", detail: "Rooms are yours. Common areas are shared." },
     {
       label: "Who lives here",
-      detail: "IT professionals and freshers, mostly from Infopark companies.",
+      detail: "Employees from TCS, Infosys, UST and other Infopark companies. Freshers and experienced — all professionals.",
     },
   ];
 

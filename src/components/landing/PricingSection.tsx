@@ -1,7 +1,7 @@
 import RevealSection from "./RevealSection";
 
 const PricingSection = () => {
-  const inclusions = ["Food", "WiFi", "Laundry", "Ironing", "0 Travel Expense"];
+  const inclusions = ["Breakfast", "Packed lunch", "Dinner", "WiFi", "Laundry", "Ironing", "0 Travel Expense"];
 
   return (
     <section className="section">
@@ -38,7 +38,7 @@ const PricingSection = () => {
         {/* Microcopy */}
         <RevealSection delay={400}>
           <p className="caption max-w-md mx-auto">
-            At StayB, no hidden mess bills. No WiFi add-ons. No commute surprises.
+            Breakfast, packed lunch for office, and dinner — all covered. No mess bills, no WiFi add-ons, no commute surprises.
           </p>
         </RevealSection>
       </div>

@@ -3,7 +3,7 @@ import { Phone, MessageCircle } from "lucide-react";
 
 const MobileCTABar = () => {
   const phoneNumber = "9633310117";
-  const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm interested in StayB hostel near Infopark.`;
+  const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm looking for a bed at StayB near Infopark. Is there availability?`;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/80 backdrop-blur-xl border-t border-border/50 px-4 py-3">

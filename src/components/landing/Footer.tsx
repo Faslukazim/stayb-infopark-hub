@@ -5,7 +5,7 @@ import RevealSection from "./RevealSection";
 
 const Footer = () => {
   const phoneNumber = "9633310117";
-  const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm interested in StayB hostel near Infopark.`;
+  const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm looking for a bed at StayB near Infopark. Is there availability?`;
 
   return (
     <footer className="section bg-foreground text-background">
@@ -23,7 +23,7 @@ const Footer = () => {
         </RevealSection>
         <RevealSection delay={300} duration={1000}>
           <p className="overline text-background/50 mb-10">
-            Beds Available · Kakkanad, Kochi
+            Beds Available Now · Kakkanad, Kochi
           </p>
         </RevealSection>
         

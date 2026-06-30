@@ -7,7 +7,7 @@ const Hero = () => {
   const { photos } = usePhotos();
   const heroPhoto = photos.find((p) => p.is_hero);
   const phoneNumber = "9633310117";
-  const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm interested in StayB hostel near Infopark.`;
+  const whatsappLink = `https://wa.me/91${phoneNumber}?text=Hi, I'm looking for a bed at StayB near Infopark. Is there availability?`;
 
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 py-24 md:py-32">
@@ -27,7 +27,7 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-wrap gap-3 mb-14 opacity-0 animate-fade-in" style={{ animationDelay: "360ms" }}>
-              {["Food included", "WiFi", "Laundry", "Ironing"].map((item) => (
+              {["3 meals/day", "WiFi", "Laundry", "Ironing", "Move in this week"].map((item) => (
                 <span key={item} className="chip">{item}</span>
               ))}
               <span className="chip-accent">₹7000/mo</span>
