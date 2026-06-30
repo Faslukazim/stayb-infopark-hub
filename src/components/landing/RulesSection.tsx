@@ -6,7 +6,6 @@ const RulesSection = () => {
     { label: "Guests", detail: "Common areas only. No overnight guests." },
     { label: "Noise", detail: "Quiet hours after 11 PM." },
     { label: "Cleanliness", detail: "Rooms are yours. Common areas are shared." },
-    { label: "Payments", detail: "Due by 5th every month. UPI accepted." },
     {
       label: "Who lives here",
       detail: "IT professionals and freshers, mostly from Infopark companies.",
