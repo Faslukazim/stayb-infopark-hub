@@ -23,7 +23,7 @@ const Hero = () => {
             </h1>
 
             <p className="body-lg mb-14 opacity-0 animate-fade-in" style={{ animationDelay: "240ms" }}>
-              7 minutes to your desk.<br className="hidden sm:block" /> Zero commute, zero headache.
+              7 minutes to your desk.<br className="hidden sm:block" /> No travel, no tension.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-14 opacity-0 animate-fade-in" style={{ animationDelay: "360ms" }}>

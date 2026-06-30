@@ -1,14 +1,13 @@
 import RevealSection from "./RevealSection";
 
 const PricingSection = () => {
-  const inclusions = ["Food", "WiFi", "Laundry", "Ironing", "₹0 commute"];
+  const inclusions = ["Food", "WiFi", "Laundry", "Ironing", "0 Travel Expense"];
 
   return (
     <section className="section">
       <div className="container-editorial text-center">
-        <RevealSection>
-          <p className="overline mb-4">Transparent Pricing</p>
-        </RevealSection>
+        
+
         
         <RevealSection delay={100}>
           <h2 className="mb-4 text-foreground">₹7,000/month.</h2>
