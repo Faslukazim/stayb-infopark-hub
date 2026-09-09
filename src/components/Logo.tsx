@@ -19,7 +19,9 @@ const Logo: React.FC<LogoProps> = ({
     <img
       src={src}
       alt={alt}
-      className={`object-contain select-none ${className}`}
+      width={522}
+      height={189}
+      className={`object-contain aspect-[522/189] select-none ${className}`}
       {...props}
     />
   );
