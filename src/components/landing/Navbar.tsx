@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo from "@/components/Logo";
 
 const Navbar = () => {
   return (
@@ -6,9 +7,10 @@ const Navbar = () => {
       <div className="container-wide flex items-center justify-between">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-foreground hover:text-foreground/80 transition-colors duration-500"
+          className="inline-flex items-center gap-2 text-foreground hover:opacity-80 transition-opacity duration-300"
+          aria-label="StayB Home"
         >
-          <span className="text-lg md:text-xl font-medium tracking-tight">StayB.</span>
+          <Logo className="h-7 md:h-8 w-auto" />
         </Link>
         <Link
           to="/photos"

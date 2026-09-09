@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Logo from "@/components/Logo";
 import RevealSection from "./RevealSection";
 
 const Footer = () => {
@@ -60,6 +61,9 @@ const Footer = () => {
 
         <RevealSection delay={600} duration={1000}>
           <div className="flex flex-col items-center gap-6">
+            <Link to="/" aria-label="StayB Home">
+              <Logo variant="light" className="h-7 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            </Link>
             <Link 
               to="/photos" 
               className="text-sm text-background/50 hover:text-background/80 transition-colors duration-500"

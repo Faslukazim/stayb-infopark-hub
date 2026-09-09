@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, X, Loader2 } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
+import Logo from "@/components/Logo";
 import RevealSection from "@/components/landing/RevealSection";
 import PhotoGrid from "@/components/photos/PhotoGrid";
 import PhotoUploader from "@/components/photos/PhotoUploader";
@@ -123,10 +124,11 @@ const Photos = () => {
           <RevealSection delay={0} duration={800}>
             <Link 
               to="/" 
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-500"
+              className="inline-flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-500"
+              aria-label="Back to StayB Home"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="font-medium text-foreground">StayB</span>
+              <Logo className="h-6 md:h-7 w-auto" />
             </Link>
           </RevealSection>
 
