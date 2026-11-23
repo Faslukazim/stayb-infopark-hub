@@ -10,7 +10,7 @@ const PricingSection = () => {
 
         
         <RevealSection delay={100}>
-          <h2 className="mb-4 text-foreground">₹7,000/month.</h2>
+          <h2 className="mb-4 text-foreground">₹7,500/month.</h2>
         </RevealSection>
         
         <RevealSection delay={150}>
@@ -30,7 +30,7 @@ const PricingSection = () => {
         <RevealSection delay={300}>
           <div className="card-elevated inline-block text-left max-w-sm mx-auto mb-10">
             <p className="overline mb-3">First Month</p>
-            <p className="text-2xl font-light text-foreground mb-2">₹8,000</p>
+            <p className="text-2xl font-light text-foreground mb-2">₹8,500</p>
             <p className="caption">Includes deposit + admission</p>
           </div>
         </RevealSection>

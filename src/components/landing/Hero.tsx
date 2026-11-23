@@ -32,7 +32,7 @@ const Hero = () => {
               {["3 meals/day", "WiFi", "Laundry", "Ironing", "Move in this week"].map((item) => (
                 <span key={item} className="chip">{item}</span>
               ))}
-              <span className="chip-accent">₹7000/mo</span>
+              <span className="chip-accent">₹7500/mo</span>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10 opacity-0 animate-fade-in" style={{ animationDelay: "480ms" }}>
