@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://stayb.in/sitemap.xml
+Sitemap: https://staybhostels.in/sitemap.xml
