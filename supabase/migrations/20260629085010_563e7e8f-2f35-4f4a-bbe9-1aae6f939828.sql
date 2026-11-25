@@ -1,1 +1,0 @@
-DROP POLICY IF EXISTS "Anyone can view photos" ON storage.objects;
