@@ -7,7 +7,7 @@ const PFX = PV ? '/stayb' : '';
 const BASE = PV ? `https://${PV}.github.io/stayb` : 'https://www.staybhostels.in'; // change when a custom domain is attached
 const PHONE = '+919633310117', PHONE_DISP = '96333 10117';
 const WA = 'https://wa.me/919633310117?text=' + encodeURIComponent("Hi, I'm looking for a bed at StayB near Infopark. Is there availability?");
-const MAPS = 'https://maps.google.com/?q=StayB+Hostel+Infopark+Kochi';
+const MAPS = 'https://maps.app.goo.gl/HRWZtNGNyLBWChSW8';
 
 const FAQ = [
  ['How far is StayB from Infopark Phase 2?', 'StayB is a 7-minute walk from Infopark Phase 2 in Kakkanad, Kochi. Most residents walk to work, so there is no bus, auto or bike expense.'],
@@ -256,7 +256,7 @@ ${ROUTE_H}${ROUTE_V}
 <div><dt>Kakkanad</dt><dd>Kochi's IT corridor</dd></div>
 <a class="link" href="${MAPS}" rel="noopener">Open in Google Maps ${ARROW}</a>
 </dl>
-<div class="mapf rv" data-cursor="Map"><iframe title="Map of Infopark Phase 2, Kakkanad, Kochi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Infopark+Phase+2,+Kakkanad,+Kochi&z=15&output=embed"></iframe></div>
+<div class="mapf rv" data-cursor="Map"><iframe title="StayB Gents Hostel, Kakkanad, Kochi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=StayB+Gents+Hostel,+Kakkanad&z=16&output=embed"></iframe></div>
 </div>
 </div></section>
 
