@@ -1,4 +1,10 @@
 {
   "cleanUrls": true,
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/google7b55e58c3115cf48.html",
+      "destination": "/google7b55e58c3115cf48.html"
+    }
+  ]
 }
