@@ -87,14 +87,16 @@ const faqLd = f => ({"@type":"FAQPage","mainEntity":f.map(([q,a])=>({"@type":"Qu
 
 const lodging = {
   "@context":"https://schema.org","@graph":[
-  {"@type":["Hostel","LocalBusiness"],"@id":BASE+"/#business","name":"StayB Men's Hostel","url":BASE+"/","telephone":PHONE,
+  {"@type":["Hostel","LocalBusiness"],"@id":BASE+"/#business","name":"StayB Gents Hostel","alternateName":["StayB Men's Hostel","StayB"],"url":BASE+"/","telephone":PHONE,
    "image":BASE+"/img/p2.jpg","logo":BASE+"/img/logo.png","priceRange":"₹7500/month",
    "description":"Men's hostel 7 minutes' walk from Infopark Phase 2, Kakkanad, Kochi. Meals, WiFi, laundry and ironing included.",
-   "address":{"@type":"PostalAddress","addressLocality":"Kakkanad","addressRegion":"Kerala","postalCode":"682042","addressCountry":"IN"},
-   "geo":{"@type":"GeoCoordinates","latitude":10.0105,"longitude":76.3640},
+   "address":{"@type":"PostalAddress","streetAddress":"Pinarmunda Infopark Short Road, Infopark Phase 2","addressLocality":"Kakkanad, Kochi","addressRegion":"Kerala","postalCode":"683565","addressCountry":"IN"},
+   "geo":{"@type":"GeoCoordinates","latitude":10.0084045,"longitude":76.3808919},
+   "hasMap":MAPS,
+   "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},
    "areaServed":["Kakkanad","Infopark Kochi","Kochi"],
    "amenityFeature":["Breakfast","Packed lunch","Dinner","WiFi","Laundry","Ironing"].map(n=>({"@type":"LocationFeatureSpecification","name":n,"value":true})),
-   "sameAs":[]},
+   "sameAs":[MAPS]},
   {"@type":"WebSite","@id":BASE+"/#site","url":BASE+"/","name":"StayB"}]};
 
 function head({title,desc,path,ld,extra=''}){
@@ -105,10 +107,11 @@ function head({title,desc,path,ld,extra=''}){
 <meta name="geo.region" content="IN-KL"><meta name="geo.placename" content="Kakkanad, Kochi">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${BASE}${path}"><meta property="og:image" content="${BASE}/img/p2.jpg"><meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3">
-<link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" sizes="any">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=4">
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">${extra}
@@ -126,7 +129,7 @@ const dock = `<div class="dock"><a class="btn primary" href="${WA}" rel="noopene
 const footer = `<footer class="foot"><div class="wrap">
 <div class="foot-top"><img src="/img/logo-white.png" alt="StayB" width="121" height="44"><p class="foot-line">A men's hostel, 7 minutes on foot from Infopark Phase 2.</p></div>
 <div class="foot-grid">
-<div><h4>Visit</h4><p>StayB Men's Hostel<br>Kakkanad, Kochi, Kerala<br>7 min from Infopark Phase 2</p><p><a href="tel:${PHONE}">Call ${PHONE_DISP}</a></p></div>
+<div><h4>Visit</h4><p>StayB Gents Hostel<br>Pinarmunda Infopark Short Rd, Phase 2<br>Kakkanad, Kochi, Kerala 683565</p><p><a href="tel:${PHONE}">Call ${PHONE_DISP}</a></p></div>
 <div><h4>Find a hostel</h4>${LANDINGS.map(l=>`<a href="/${l.slug}">${l.kw}</a>`).join('')}</div>
 <div><h4>StayB</h4><a href="/#price">Price</a><a href="/#faq">FAQ</a><a href="${MAPS}" rel="noopener">Open in Maps</a><a href="${WA}" rel="noopener">WhatsApp</a></div>
 </div>
