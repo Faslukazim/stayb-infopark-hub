@@ -7,14 +7,14 @@
       "permanent": true
     },
     {
-      "source": "/:slug(hostel-near-infopark-kochi|mens-hostel-kakkanad|pg-for-men-near-infopark|hostel-with-food-near-infopark|cheap-hostel-kakkanad-kochi|hostel-for-it-employees-kochi).html",
+      "source": "/:slug(hostel-near-infopark-kochi|gents-hostel-near-infopark|mens-hostel-kakkanad|pg-for-men-near-infopark|hostel-with-food-near-infopark|cheap-hostel-kakkanad-kochi|hostel-for-it-employees-kochi).html",
       "destination": "/:slug",
       "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/:slug(hostel-near-infopark-kochi|mens-hostel-kakkanad|pg-for-men-near-infopark|hostel-with-food-near-infopark|cheap-hostel-kakkanad-kochi|hostel-for-it-employees-kochi)",
+      "source": "/:slug(hostel-near-infopark-kochi|gents-hostel-near-infopark|mens-hostel-kakkanad|pg-for-men-near-infopark|hostel-with-food-near-infopark|cheap-hostel-kakkanad-kochi|hostel-for-it-employees-kochi)",
       "destination": "/:slug.html"
     }
   ],

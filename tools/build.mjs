@@ -30,6 +30,15 @@ const LANDINGS = [
     ['What you get for ₹7,500 a month','Breakfast, a packed lunch for office, dinner, WiFi, laundry and ironing are all included. The first month is ₹8,500, which includes your refundable deposit and admission.'],
    ], bullets:['7-minute walk to Infopark Phase 2','3 meals a day included','WiFi, laundry and ironing included','No fixed curfew, own key','Refundable deposit'],
    faq:[FAQ[0],FAQ[1],FAQ[6]] },
+ { slug:'gents-hostel-near-infopark', kw:'Gents hostel near Infopark', title:'Gents Hostel Near Infopark Kochi · 7 Min Walk · ₹7,500 With Food | StayB',
+   desc:'StayB Gents Hostel near Infopark Kochi and Phase 2, Kakkanad. ₹7,500/month with 3 meals, WiFi, laundry and ironing. Walk to Infopark in 7 minutes.',
+   h1:'A <em>gents hostel</em> near Infopark built for the workday.',
+   intro:'Searching for a gents hostel near Infopark usually means choosing between crowded rooms and long daily commutes. StayB Gents Hostel sits 7 minutes on foot from Infopark Phase 2 in Kakkanad, with three meals a day included.',
+   sections:[
+    ['Built for Infopark Phase 1, Phase 2 & SmartCity','Located on Pinarmunda Infopark Short Road in Kakkanad, StayB keeps you close to Infopark Phase 2 on foot and minutes from Infopark Phase 1 and SmartCity—so you save travel time and daily fare.'],
+    ['Everything inside ₹7,500 a month','Breakfast, a packed lunch for the office, dinner, WiFi, laundry and ironing are covered in one rent. The first month is ₹8,500 including your refundable deposit and admission.'],
+   ], bullets:['StayB Gents Hostel, Kakkanad','7-minute walk to Infopark Phase 2','3 meals with packed office lunch','WiFi, laundry and ironing included','No curfew, own key, quiet after 11 PM'],
+   faq:[FAQ[0],FAQ[1],FAQ[7]] },
  { slug:'mens-hostel-kakkanad', kw:'Men\'s hostel in Kakkanad', title:'Men\'s Hostel in Kakkanad, Kochi · Food + WiFi Included | StayB',
    desc:'StayB is a men\'s hostel in Kakkanad, Kochi for IT professionals, freshers and interns. All-inclusive ₹7,500/month. Walk to Infopark in 7 minutes.',
    h1:'A men\'s hostel in <em>Kakkanad</em> that feels like home.',
@@ -89,7 +98,7 @@ const lodging = {
   "@context":"https://schema.org","@graph":[
   {"@type":["Hostel","LocalBusiness"],"@id":BASE+"/#business","name":"StayB Gents Hostel","alternateName":["StayB Men's Hostel","StayB"],"url":BASE+"/","telephone":PHONE,
    "image":BASE+"/img/p2.jpg","logo":BASE+"/img/logo.png","priceRange":"₹7500/month",
-   "description":"Men's hostel 7 minutes' walk from Infopark Phase 2, Kakkanad, Kochi. Meals, WiFi, laundry and ironing included.",
+   "description":"StayB Gents & Men's Hostel, 7 minutes' walk from Infopark Phase 2, Kakkanad, Kochi. Meals, WiFi, laundry and ironing included.",
    "address":{"@type":"PostalAddress","streetAddress":"Pinarmunda Infopark Short Road, Infopark Phase 2","addressLocality":"Kakkanad, Kochi","addressRegion":"Kerala","postalCode":"683565","addressCountry":"IN"},
    "geo":{"@type":"GeoCoordinates","latitude":10.0084045,"longitude":76.3808919},
    "hasMap":MAPS,
@@ -280,8 +289,8 @@ ${ROUTE_H}${ROUTE_V}
 
 <section class="areas light"><div class="wrap areas-in">
 <header class="sec-head rv"><p class="kicker">Find your stay</p><h2>Hostel in Kakkanad, <em>built for Infopark.</em></h2>
-<p class="lead">StayB is a men's hostel in Kakkanad, Kochi, made for people who work at Infopark. Whether you are searching for a hostel near Infopark, a PG for men, or a hostel with food, the answer is the same: walk 7 minutes, eat well and pay one price.</p></header>
-<ul class="index rv">${LANDINGS.map((l,i)=>`<li><a href="/${l.slug}" data-img="/img/${['p2','p1','p4','p3','p2','p1'][i]}.jpg"><span>${l.kw}</span>${ARROW}</a></li>`).join('')}</ul>
+<p class="lead">StayB is a gents and men's hostel in Kakkanad, Kochi, made for people who work at Infopark. Whether you are searching for a gents hostel near Infopark, a PG for men, or a hostel with food, the answer is the same: walk 7 minutes, eat well and pay one price.</p></header>
+<ul class="index rv">${LANDINGS.map((l,i)=>`<li><a href="/${l.slug}" data-img="/img/${['p2','p1','p4','p3'][i%4]}.jpg"><span>${l.kw}</span>${ARROW}</a></li>`).join('')}</ul>
 </div></section>
 
 <section class="faq light" id="faq"><div class="wrap faq-in">
