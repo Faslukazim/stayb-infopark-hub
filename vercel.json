@@ -1,10 +1,31 @@
 {
-  "cleanUrls": true,
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(hostel-near-infopark-kochi|mens-hostel-kakkanad|pg-for-men-near-infopark|hostel-with-food-near-infopark|cheap-hostel-kakkanad-kochi|hostel-for-it-employees-kochi).html",
+      "destination": "/:slug",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
-      "source": "/google7b55e58c3115cf48.html",
-      "destination": "/google7b55e58c3115cf48.html"
+      "source": "/:slug(hostel-near-infopark-kochi|mens-hostel-kakkanad|pg-for-men-near-infopark|hostel-with-food-near-infopark|cheap-hostel-kakkanad-kochi|hostel-for-it-employees-kochi)",
+      "destination": "/:slug.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     }
   ]
 }
